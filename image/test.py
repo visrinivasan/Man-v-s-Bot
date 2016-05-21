@@ -14,7 +14,7 @@ def scale(image, max_size):
 						(max_size[1]-image.size[1])/2))
     return back
 
-img = Image.open('x.png')
+img = Image.open('test2.png')
 #img = scale(img, (640,480))
 #img.save("test1.bmp")
 print(pytesseract.image_to_string(img,config='-psm 10000'))

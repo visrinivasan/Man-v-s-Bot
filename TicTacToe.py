@@ -71,8 +71,14 @@ class TTT:
         self.winner = None
         self.lastmoves = []
 		
-		# Read Image
-        self.img = cv2.imread('image/tictac3.png')
+	# Read Image
+	vc = cv2.VideoCapture(0)
+ 
+	if vc.isOpened(): # try to get the first frame
+	     rval, self.img = vc.read()
+        else:
+	     rval = False
+	#self.img = cv2.imread('image/tictac5.png')
         self.img = cv2.resize(self.img, (300, 300)) 
         
         count = 0
@@ -81,8 +87,8 @@ class TTT:
                 self.crop_img = self.img[j+10:j+90, i+10:i+90]
                 cv2.imwrite('image/test.png',self.crop_img)
                 img = Image.open('image/test.png')
-                img = scale(img, (640,480))
-                img.save("image/test.bmp")
+                #img = scale(img, (640,480))
+                #img.save("image/test.bmp")
                 str = pytesseract.image_to_string(img,config='-psm 10000')
                 if str == 'O':
                     print(str)
@@ -116,8 +122,14 @@ class TTT:
         self.winner = None
         self.lastmoves = []
 		
-		# Read Image
-        self.img = cv2.imread('image/tictac3.png')
+	# Read Image
+        vc = cv2.VideoCapture(0)
+
+        if vc.isOpened(): # try to get the first frame
+             rval, self.img = vc.read()
+        else:
+             rval = False
+        #self.img = cv2.imread('image/tictac5.png')
         self.img = cv2.resize(self.img, (300, 300)) 
         
         count = 0
@@ -126,8 +138,8 @@ class TTT:
                 self.crop_img = self.img[j+10:j+90, i+10:i+90]
                 cv2.imwrite('image/test.png',self.crop_img)
                 img = Image.open('image/test.png')
-                img = scale(img, (640,480))
-                img.save("image/test.bmp")
+                #img = scale(img, (640,480))
+                #img.save("image/test.bmp")
                 str = pytesseract.image_to_string(img,config='-psm 10000')
                 if str == 'O':
                     x = count%3
@@ -157,7 +169,13 @@ class TTT:
             return
 
         # Read Image
-        self.img = cv2.imread('image/tictac3.png')
+        vc = cv2.VideoCapture(0)
+
+        if vc.isOpened(): # try to get the first frame
+             rval, self.img = vc.read()
+        else:
+             rval = False
+        #self.img = cv2.imread('image/tictac4.png')
         self.img = cv2.resize(self.img, (300, 300)) 
         
         count = 0
@@ -166,8 +184,8 @@ class TTT:
                 self.crop_img = self.img[j+10:j+90, i+10:i+90]
                 cv2.imwrite('image/test.png',self.crop_img)
                 img = Image.open('image/test.png')
-                img = scale(img, (640,480))
-                img.save("image/test.bmp")
+                #img = scale(img, (640,480))
+                #img.save("image/test.bmp")
                 str = pytesseract.image_to_string(img,config='-psm 10000')
                 if str == 'O':
                     x = count%3
