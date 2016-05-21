@@ -1,14 +1,15 @@
 Course: CSE 237D
+Project : Man vs Bot
 Team: Intelli5
-Developed by Dhanesh Pradhan
+Dhanesh Pradhan
+Yashank Sakhardande
+Mihir Patankar
+Vignesh Srinivasan
 
-To run Tic-Tac-Toe application follow below steps:
-1.Download files tic.py and ticGui.py
-2.Run ticGui.py and rest of the instructions will be on the screen
-3. To enter X or O press 'X' or 'O' and hit enter
-4. To enter position number enter any number from 0-8
-5. Grid is marked as shown below:
-	0	1	2
-	3	4	5
-	6	7	8
-"Dhanesh Pradhan" 
+Project Overview :
+
+We plan to develop an autonomous robotic companion which can be used to play a pencil-paper
+
+game such as tic-tac-toe, chess, scrabble with a human. 
+
+Sounds exciting ?! Check out our Wiki for a detailed overview.
