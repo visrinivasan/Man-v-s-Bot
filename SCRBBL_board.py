@@ -59,7 +59,9 @@ class TTT:
                 str2 = pytesseract.image_to_string(img,config='-psm 10000')
                 str1 = ''.join([k for k in str2 if not k.isdigit()])
                 str = ''.join(e for e in str1 if e.isalnum())
-                print(str)
+		if not str:
+		   str = ' '
+                #print(str)
                 self.canvas.create_text(i+10, j+10, font="Purisa",text=str)
                 self.board[count] = str
                 #cv2.namedWindow('dst_rt', cv2.WINDOW_NORMAL)
@@ -67,6 +69,12 @@ class TTT:
                 #cv2.imshow('dst_rt', self.crop_img)
                 #cv2.waitKey(0)		
                 count = count+1
+
+	board = np.reshape(self.board, (-1, 15))
+	rows = (''.join(row) for row in board)
+	columns = (''.join(column) for column in zip(*board))
+	words = [word for line in itertools.chain(rows,columns) for word in line.split() if len(word) > 1]
+	print(words)
 
     def restart(self):
         self.canvas.delete(ALL)
@@ -95,16 +103,19 @@ class TTT:
                 str2 = pytesseract.image_to_string(img,config='-psm 10000')
                 str1 = ''.join([k for k in str2 if not k.isdigit()])
                 str = ''.join(e for e in str1 if e.isalnum())
-                print(str)
+		if not str: 
+		   str = ' '
+                #print(str)
                 self.canvas.create_text(i+10, j+10, font="Purisa",text=str)
                 self.board[count] = str
                 count = count+1
 				
-        rows = (''.join(row) for row in board)
-        columns = (''.join(column) for column in zip(*board))
-        words = [word for line in itertools.chain(rows,columns) for word in line.split() if len(word) > 1]
-        
-        self.changeStatus("Robotic Arm's turn")
+	board = np.reshape(self.board, (-1, 15))
+	rows = (''.join(row) for row in board)
+	columns = (''.join(column) for column in zip(*board))
+	words = [word for line in itertools.chain(rows,columns) for word in line.split() if len(word) > 1]
+	print(words)
+	self.changeStatus("Robotic Arm's turn")
 		
     def next(self):
 
@@ -131,9 +142,12 @@ class TTT:
                 self.canvas.create_text(i+10, j+10, font="Purisa",text=str)
                 self.board[count] = str
                 count = count+1
-		
-		#pos, score = min_max_move(self, 1)
-        #self.markFinal(pos, 1);
+	
+	board = np.reshape(self.board, (-1, 15))
+        rows = (''.join(row) for row in board)
+        columns = (''.join(column) for column in zip(*board))
+        words = [word for line in itertools.chain(rows,columns) for word in line.split() if len(word) > 1]
+	print(words)
 		
     def __board(self):
         for i in range(0,300,2*(300/COLS)):
