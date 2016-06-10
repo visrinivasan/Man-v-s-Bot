@@ -8,7 +8,7 @@ Vignesh Srinivasan
 
 Project Overview :
 
-We plan to develop an autonomous robotic companion which can be used to play a pencil-paper
+We developed an autonomous robotic companion which can be used to play a pencil-paper
 
 game such as tic-tac-toe, chess, scrabble with a human. 
 
