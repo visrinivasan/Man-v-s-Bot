@@ -30,7 +30,7 @@ Board games form part of a multi million industry. Player to player interaction 
 
  * Vignesh Srinivasan
 
-   aaannndddd.....
+   and
 
 ![logo.png](https://bitbucket.org/repo/xkMdzq/images/2339998729-logo.png)
 
